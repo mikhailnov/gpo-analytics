@@ -40,13 +40,44 @@ ShowDeleteCommand=true
 * `Enabled=false` — убрать кнопку `Удалить` из контекстного меню
 * `Enabled=true` — добавить кнопку `Удалить` в контекстное меню
 
+## Оформление рабочей среды
+
+### Внешний вид - Оформление рабочей среды
+
+![""](../img/20230704_172159.png "")
+
+Используются оформления рабочей среды, доступные в `/usr/share/plasma/look-and-feel`
+
+Допустимые значения параметра:
+
+#### Светлая Rosa
+
+```ini
+[KDE]
+LookAndFeelPackage=org.kde.rosalight.desktop
+```
+
+#### Breeze
+
+```ini
+[KDE]
+LookAndFeelPackage=org.kde.breeze.desktop
+```
+
+#### Breeze, тёмный вариант
+
+```ini
+[KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop
+```
+
 ## Цвета
 
 ### Внешний вид - Цвета
 
 ![""](../img/20230704_165005.png "")
 
-Использууются цветовые схемы, доступные в `/usr/share/color-schemes`
+Используются цветовые схемы, доступные в `/usr/share/color-schemes`
 
 Допустимые значения параметра:
 
@@ -56,6 +87,7 @@ ShowDeleteCommand=true
 [General]
 ColorScheme=BreezeLight
 ```
+
 #### Breeze, цвет морской волны
 
 ```ini
@@ -76,7 +108,6 @@ ColorScheme=BreezeClassic
 [General]
 ColorScheme=ROSALight
 ```
-
 
 
 ## Другая настройка
