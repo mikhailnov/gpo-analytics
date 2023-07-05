@@ -109,6 +109,43 @@ ColorScheme=BreezeClassic
 ColorScheme=ROSALight
 ```
 
+## Значки
+
+### Внешний вид - Значки
+
+![""](../img/20230705_085209.png "")
+
+Используются темы значков, доступные в `/usr/share/icons`
+
+Допустимые значения параметра:
+
+#### Breeze
+
+```ini
+[Icons]
+Theme=breeze
+```
+
+#### Breeze, тёмный вариант
+
+```ini
+[Icons]
+Theme=breeze-dark
+```
+
+#### Rosa
+
+```ini
+[Icons]
+Theme=rosa5
+```
+
+#### Rosa, тёмный вариант
+
+```ini
+[Icons]
+Theme=rosa5-dark
+```
 
 ## Другая настройка
 
