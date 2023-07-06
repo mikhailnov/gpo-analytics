@@ -21,7 +21,7 @@
 cursorTheme=breeze_cursors
 ```
 
-#### Breeze, светлый ваиант
+#### Breeze, светлый вариант
 
 ```ini
 [Mouse]

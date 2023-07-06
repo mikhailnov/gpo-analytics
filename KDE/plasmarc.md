@@ -28,7 +28,7 @@ name=air
 name=ROSA-Light
 ```
 
-#### Breeze, светлый ваиант
+#### Breeze, светлый вариант
 
 ```ini
 [Theme]
