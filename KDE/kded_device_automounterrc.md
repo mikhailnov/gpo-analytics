@@ -66,6 +66,7 @@ AutomountUnknownDevices=false
 * `AutomountUnknownDevices=false` — автоматическое монтирование отключено
 * `AutomountUnknownDevices=true` — автоматическое монтирование включено
 
+## Блокировка параметров
 
 ### Блокировка изменения параметров автоматического подключения внешних носителей
 

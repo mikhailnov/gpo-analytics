@@ -34,6 +34,7 @@ cursorTheme=Breeze_Snow
 [Mouse]
 cursorTheme=wonderland
 ```
+### Блокировка параметров
 
 Для запрета пользователю производить изменение курсоров мыши, в файле `/etc/xdg/kcminputrc`
 
