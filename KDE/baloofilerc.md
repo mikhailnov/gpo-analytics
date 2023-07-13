@@ -53,3 +53,4 @@ index hidden folders=true
 [General]
 index hidden folders=false
 ```
+
