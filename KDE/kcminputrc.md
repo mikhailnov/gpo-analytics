@@ -28,19 +28,44 @@ cursorTheme=breeze_cursors
 cursorTheme=Breeze_Snow
 ```
 
-#### Breeze, тёмный вариант
-
-```ini
-[Theme]
-name=breeze-dark
-```
-
 #### Wonderland
 
 ```ini
 [Mouse]
 cursorTheme=wonderland
 ```
+
+Для запрета пользователю производить изменение курсоров мыши, в файле `/etc/xdg/kcminputrc`
+
+блокируется изменение параметров, символами блокировки строки параметра `[$i]`, и курсороы мыши становятся
+
+недоступны для изменения:
+
+### Блокировка самой темы
+
+#### Breeze
+
+```ini
+[Mouse]
+cursorTheme[$i]=breeze_cursors
+```
+
+#### Breeze, светлый вариант
+
+```ini
+[Mouse]
+cursorTheme[$i]=Breeze_Snow
+```
+
+### Блокировка группы
+
+#### Wonderland
+
+```ini
+[Mouse][$i]
+cursorTheme=wonderland
+```
+
 
 
 ## Другая настройка
