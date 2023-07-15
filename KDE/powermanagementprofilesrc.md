@@ -348,3 +348,27 @@ idleTime[$i]=60
 
 * `[LowBattery][DPMSControl][$i]`
 
+
+## Приостановка сеанса
+
+в конфиг добавляется:
+
+#### Питание от сети
+
+```ini
+[AC][SuspendSession]
+idleTime=900000
+```
+
+#### Питание от батареи
+
+```ini
+[Battery][SuspendSession]
+idleTime=600000
+```
+#### Низкий уровень заряда
+
+```ini
+[LowBattery][SuspendSession]
+idleTime=300000
+```
