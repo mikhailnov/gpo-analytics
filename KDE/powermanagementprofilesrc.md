@@ -395,6 +395,13 @@ suspendType=1
 * `suspendType=8` — выключить компьютер
 * `suspendType=32` — заблокировать экран
 
+Параметр `suspendThenHibernate` используется для перехода из ждущего в
+
+спяший режим при бездействии.
+
+* `Enabled=false` — не переходить из ждущего в спяший режим при бездействии
+* `Enabled=true` — переходить из ждущего в спяший режим при бездействии
+
 ### Блокировка параметров
 
 Для запрета пользователю производить изменение времени приостановки сеанса,
@@ -461,7 +468,37 @@ suspendThenHibernate=false
 suspendType[$i]=1
 ```
 
-#### Время задержки и тип действия, блокировкой изменения группы
+#### Переход из ждущего в спяший режим при бездействии
+
+##### Питание от сети
+
+```ini
+[AC][SuspendSession]
+idleTime=900000
+suspendThenHibernate[$i]=false
+suspendType=1
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][SuspendSession]
+idleTime=600000
+suspendThenHibernate[$i]=false
+suspendType=1
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][SuspendSession]
+idleTime=300000
+suspendThenHibernate[$i]=false
+suspendType=1
+```
+
+#### Время задержки, тип действия и переход из ждущего в спяший
+
+#### режим при бездействии, блокировкой изменения группы
 
 ##### Питание от сети
 
@@ -511,3 +548,4 @@ suspendType=1
 
 * `[LowBattery][SuspendSession][$i]`
 
+## Обработка событий от кнопок
