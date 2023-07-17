@@ -624,3 +624,67 @@ triggerLidActionWhenExternalMonitorPresent=false
 символами блокировки строки параметра `[$i]`, и обработка событий от кнопок становится
 
 недоступна для изменения, например:
+
+##### При закрытии крышки ноутбука
+
+* `lidAction[$i]=0` — ничего не делать
+* `lidAction[$i]=1` — перейти в ждущий режим
+* `lidAction[$i]=2` — перейти в спящий режим
+* `lidAction[$i]=4` — перейти в гибридный спящий режим
+* `lidAction[$i]=8` — выключить компьютер
+* `lidAction[$i]=32` — заблокировать экран
+* `lidAction[$i]=64` — выключить монитор
+
+##### При нажатии кнопки питания
+
+* `powerButtonAction[$i]=0` — ничего не делать
+* `powerButtonAction[$i]=1` — перейти в ждущий режим
+* `powerButtonAction[$i]=2` — перейти в спящий режим
+* `powerButtonAction[$i]=4` — перейти в гибридный спящий режим
+* `powerButtonAction[$i]=8` — выключить компьютер
+* `powerButtonAction[$i]=16` — диалог подтверждения выхода
+* `powerButtonAction[$i]=32` — заблокировать экран
+* `powerButtonAction[$i]=64` — выключить монитор
+
+#### Даже если подключен внешний монитор
+
+* `triggerLidActionWhenExternalMonitorPresent=false` — действие при закрытии крышки ноутбука не активно, если подключен внешний монитор
+* `triggerLidActionWhenExternalMonitorPresent=true` — действие при закрытии крышки ноутбука активно, если подключен внешний монитор
+
+#### Полное отключение параметра обработки событий от кнопок с блокировкой включения
+
+Для полного отключения обработки событий от кнопок с блокировкой включения,
+
+в `/etc/xdg/powermanagementprofilesrc` должены быть полностью отключены
+
+все значения строки параметров, а строка параметра заблокирована
+
+символом блокировки [$i]
+
+##### Питание от сети
+
+##### Питание от сети
+
+```ini
+[AC][HandleButtonEvents][$i]
+lidAction=0
+powerButtonAction=0
+triggerLidActionWhenExternalMonitorPresent=false
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][HandleButtonEvents][$i]
+lidAction=0
+powerButtonAction=0
+triggerLidActionWhenExternalMonitorPresent=false
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][HandleButtonEvents][$i]
+lidAction=0
+powerButtonAction=0
+triggerLidActionWhenExternalMonitorPresent=false
+```
