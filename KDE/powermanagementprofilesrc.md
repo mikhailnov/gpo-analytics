@@ -395,6 +395,8 @@ suspendType=1
 * `suspendType=8` — выключить компьютер
 * `suspendType=32` — заблокировать экран
 
+#### Переходить из ждущего в спяший режим при бездействии
+
 Параметр `suspendThenHibernate` используется для перехода из ждущего в
 
 спяший режим при бездействии.
@@ -549,3 +551,76 @@ suspendType=1
 * `[LowBattery][SuspendSession][$i]`
 
 ## Обработка событий от кнопок
+
+в конфиг добавляется:
+
+##### Питание от сети
+
+```ini
+[AC][HandleButtonEvents]
+lidAction=1
+powerButtonAction=16
+powerDownAction=16
+triggerLidActionWhenExternalMonitorPresent=false
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][HandleButtonEvents]
+lidAction=1
+powerButtonAction=16
+powerDownAction=16
+triggerLidActionWhenExternalMonitorPresent=false
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][HandleButtonEvents]
+lidAction=1
+powerButtonAction=16
+powerDownAction=16
+triggerLidActionWhenExternalMonitorPresent=false
+```
+
+Допустимы значения параметра, например:
+
+##### При закрытии крышки ноутбука
+
+* `lidAction=0` — ничего не делать
+* `lidAction=1` — перейти в ждущий режим
+* `lidAction=2` — перейти в спящий режим
+* `lidAction=4` — перейти в гибридный спящий режим
+* `lidAction=8` — выключить компьютер
+* `lidAction=32` — заблокировать экран
+* `lidAction=64` — выключить монитор
+
+#### Даже если подключен внешний монитор
+
+Параметр `triggerLidActionWhenExternalMonitorPresent` используется для подтверждения
+
+действия при закрытии крышки ноутбука, если подключен внешний монитор.
+
+* `Enabled=false` — действие при закрытии крышки ноутбука не активно, если подключен внешний монитор
+* `Enabled=true` — действие при закрытии крышки ноутбука активно, если подключен внешний монитор
+
+##### При нажатии кнопки питания
+
+* `powerButtonAction=0` — ничего не делать
+* `powerButtonAction=1` — перейти в ждущий режим
+* `powerButtonAction=2` — перейти в спящий режим
+* `powerButtonAction=4` — перейти в гибридный спящий режим
+* `powerButtonAction=8` — выключить компьютер
+* `powerButtonAction=16` — диалог подтверждения выхода
+* `powerButtonAction=32` — заблокировать экран
+* `powerButtonAction=64` — выключить монитор
+
+### Блокировка параметров
+
+Для запрета пользователю производить изменение обработки событий от кнопок,
+
+в файле `/etc/xdg/powermanagementprofilesrc` блокируется изменение параметров,
+
+символами блокировки строки параметра `[$i]`, и обработка событий от кнопок становится
+
+недоступна для изменения, например:
