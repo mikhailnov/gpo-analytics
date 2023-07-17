@@ -648,8 +648,8 @@ triggerLidActionWhenExternalMonitorPresent=false
 
 #### Даже если подключен внешний монитор
 
-* `triggerLidActionWhenExternalMonitorPresent=false` — действие при закрытии крышки ноутбука не активно, если подключен внешний монитор
-* `triggerLidActionWhenExternalMonitorPresent=true` — действие при закрытии крышки ноутбука активно, если подключен внешний монитор
+* `triggerLidActionWhenExternalMonitorPresent[$i]=false` — действие при закрытии крышки ноутбука не активно, если подключен внешний монитор
+* `triggerLidActionWhenExternalMonitorPresent[$i]=true` — действие при закрытии крышки ноутбука активно, если подключен внешний монитор
 
 #### Полное отключение параметра обработки событий от кнопок с блокировкой включения
 
@@ -660,8 +660,6 @@ triggerLidActionWhenExternalMonitorPresent=false
 все значения строки параметров, а строка параметра заблокирована
 
 символом блокировки [$i]
-
-##### Питание от сети
 
 ##### Питание от сети
 
