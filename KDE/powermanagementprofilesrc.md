@@ -838,3 +838,147 @@ scriptPhase[$i]=0
 ```ini
 [LowBattery][RunScript][$i]
 ```
+
+## Беспроводные сети
+
+в конфиг добавляется:
+
+##### Питание от сети
+
+```ini
+[AC][WirelessPowerSaving]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][WirelessPowerSaving]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][WirelessPowerSaving]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+
+Допустимые значения параметра, например:
+
+##### Wi-Fi
+
+* `wifiOption=0` — оставить без изменения
+* `wifiOption=1` — выключить
+* `wifiOption=2` — включить
+
+##### Мобильный интернет
+
+* `wwanOption=0` — оставить без изменения
+* `wwanOption=1` — выключить
+* `wwanOption=2` — включить
+
+##### Bluetooth
+
+* `btOption=0` — оставить без изменения
+* `btOption=1` — выключить
+* `btOption=2` — включить
+
+### Блокировка параметров
+
+Для запрета пользователю производить изменение поведения беспроводных сетей,
+
+в файле `/etc/xdg/powermanagementprofilesrc` блокируется изменение параметров,
+
+символами блокировки строки параметра `[$i]`, и параметры поведения беспроводных сетей
+
+становятся недоступы для изменения, например:
+
+#### Каждый параметр по отдельности
+
+##### Питание от сети
+
+```ini
+[AC][WirelessPowerSaving]
+btOption[$i]=0
+wifiOption[$i]=0
+wwanOption[$i]=0
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][WirelessPowerSaving]
+btOption[$i]=2
+wifiOption[$i]=2
+wwanOption[$i]=2
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][WirelessPowerSaving]
+btOption[$i]=1
+wifiOption[$i]=1
+wwanOption[$i]=1
+```
+
+#### Сразу всю группу параметров
+
+##### Питание от сети
+
+```ini
+[AC][WirelessPowerSaving][$i]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][WirelessPowerSaving][$i]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][WirelessPowerSaving][$i]
+btOption=0
+wifiOption=0
+wwanOption=0
+```
+
+
+#### Полное отключение изменения поведения беспроводных сетей с блокировкой включения
+
+Для полного отключения изменения поведения беспроводных сетей с блокировкой включения,
+
+в `/etc/xdg/powermanagementprofilesrc` должены быть полностью отключены
+
+все значения строки параметров, а строка параметра заблокирована
+
+символом блокировки [$i]
+
+##### Питание от сети
+
+```ini
+[AC][WirelessPowerSaving][$i]
+```
+
+##### Питание от батареи
+
+```ini
+[Battery][WirelessPowerSaving][$i]
+```
+##### Низкий уровень заряда
+
+```ini
+[LowBattery][WirelessPowerSaving][$i]
+```
