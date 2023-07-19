@@ -56,7 +56,7 @@ SyncClipboards=false
 
 Если параметр сихронизации выделения с буфером обмена отключен,
 
-то параметр `IgnoreSelection` быть установлен в заначение `IgnoreSelection=true`
+то параметр `IgnoreSelection` должен быть установлен в заначение `IgnoreSelection=true`
 
 #### Журнал буфера обмена
 
