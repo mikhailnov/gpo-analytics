@@ -19,7 +19,6 @@
 AutoStart=false
 IgnoreImages=false
 MaxClipItems=2
-Number of Actions=0
 SyncClipboards=false
 ```
 
@@ -75,6 +74,30 @@ SyncClipboards=false
 
 * `MaxClipItems=4` — сохранять в журнале четыре записи
 
+
+#### Нетекстовое выделение
+
+Параметр `SelectionTextOnly` включает сохранение нетекстового выделения в журнал.
+Параметр `IgnoreImages` включает сохранение нетекстового выделения, файлов изображений, в журнал.
+
+Значения параметра, например:
+
+##### Всегда сохранать в журнале
+
+* `SelectionTextOnly=false` — всегда сохранать в журнале
+* `IgnoreImages=false` — всегда сохранать в журнале
+
+##### Никогда не сохранать в журнале
+
+* `SelectionTextOnly=false` — никогда не сохранать в журнале
+* `IgnoreImages=true` — никогда не сохранать в журнале
+
+##### Только при явном выделение
+
+* `IgnoreImages=false` — только при явном выделение
+
+Строка параметра `SelectionTextOnly=false` должна быть полностью удалена из файла `~/.config/klipperrc`
+
 ## Блокировка параметров
 
 Для запрета пользователю производить изменение параметров буфера обмена, в файле `/etc/xdg/klipperrc`
@@ -83,11 +106,30 @@ SyncClipboards=false
 
 параметров буфера обмена становится недоступно для изменения, например:
 
+##### Отдельные парамеры
+
+Запрет автозапуска приложения klipper
+
+Макимальное количество записей в буфере обмена две строки
+
+А так же запрет синхронизации выделения с буфером обмена
+
 ```ini
 [General]
+AutoStart[$i]=false
+IgnoreImages=false
+MaxClipItems[$i]=2
+SyncClipboards[$i]=false
+```
+
+##### Все парамеры
+
+Блокировка всей группы параметров
+
+```ini
+[General][$i]
 AutoStart=false
 IgnoreImages=false
 MaxClipItems=2
-Number of Actions=0
 SyncClipboards=false
 ```
