@@ -96,6 +96,7 @@ LookAndFeelPackage=org.kde.breeze.desktop
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
 ```
+
 ### Блокировка параметров
 
 Для запрета пользователю производить изменение оформления рабочей среды, в файле `/etc/xdg/kdeglobals`
@@ -117,6 +118,14 @@ LookAndFeelPackage[$i]=org.kde.rosalight.desktop
 [KDE]
 LookAndFeelPackage[$i]=org.kde.breeze.desktop
 ```
+
+Если в файле `/etc/xdg/kdeglobals` совсем не задана тема оформления,
+
+то будет использоваться оформление `org.kde.breeze.desktop`
+
+Если в файле `/etc/xdg/kdeglobals` задана несуществующая тема оформления,
+
+или название указано с ошибкой, то будет использоваться оформление `org.kde.breeze.desktop`
 
 ## Цвета
 
