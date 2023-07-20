@@ -18,8 +18,9 @@
 [General]
 AutoStart=false
 IgnoreImages=false
+IgnoreSelection=false
 MaxClipItems=2
-SyncClipboards=false
+SyncClipboards=true
 ```
 
 Допустимые значения параметра:
@@ -37,12 +38,20 @@ SyncClipboards=false
 
 #### Выделение и буфер обмена
 
-Параметр `SyncClipboards` включает сихронизацию выделения с буфером обмена.
+Параметры `SyncClipboards=true` и `IgnoreSelection=false` включают
 
-Значения параметра
+сихронизацию выделения с буфером обмена.
 
-* `Enabled=false` — отключить сихронизацию выделения с буфером обмена
-* `Enabled=true` — включить сихронизацию выделения с буфером обмена
+Для отключения синхронизации выделения с буфером обмена, строки этих
+
+двух параметров должны быть полностью удалены
+
+```ini
+[General]
+AutoStart=false
+IgnoreImages=false
+MaxClipItems=2
+```
 
 #### Выделение текста
 
@@ -53,9 +62,10 @@ SyncClipboards=false
 * `Enabled=false` — всегда сохранаять в журнал
 * `Enabled=true` — только при явном копировании
 
-Если параметр сихронизации выделения с буфером обмена отключен,
+Значение параметра `Enabled=true` работает, только если синхронизации выделения с буфером
 
-то параметр `IgnoreSelection` должен быть установлен в заначение `IgnoreSelection=true`
+обмена включена строкой параметра `SyncClipboards=true`
+
 
 #### Журнал буфера обмена
 
@@ -86,6 +96,10 @@ SyncClipboards=false
 
 * `SelectionTextOnly=false` — всегда сохранать в журнале
 * `IgnoreImages=false` — всегда сохранать в журнале
+
+Значение параметра `Всегда сохранать в журнале` работает, только если синхронизации выделения
+
+с буфером обмена включена строкой параметра `SyncClipboards=true`
 
 ##### Никогда не сохранать в журнале
 
@@ -141,7 +155,6 @@ ReplayActionInHistory=true
 AutoStart=false
 IgnoreImages=false
 MaxClipItems=2
-SyncClipboards=false
 TimeoutForActionPopups=7
 ```
 
@@ -189,14 +202,11 @@ EnableMagicMimeActions=false
 
 Макимальное количество записей в буфере обмена две строки
 
-А так же запрет синхронизации выделения с буфером обмена
-
 ```ini
 [General]
 AutoStart[$i]=false
 IgnoreImages=false
 MaxClipItems[$i]=2
-SyncClipboards[$i]=false
 ```
 
 #### Все парамеры
@@ -208,5 +218,4 @@ SyncClipboards[$i]=false
 AutoStart=false
 IgnoreImages=false
 MaxClipItems=2
-SyncClipboards=false
 ```
