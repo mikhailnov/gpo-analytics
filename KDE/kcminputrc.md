@@ -34,6 +34,7 @@ cursorTheme=Breeze_Snow
 [Mouse]
 cursorTheme=wonderland
 ```
+
 ### Блокировка параметров
 
 Для запрета пользователю производить изменение курсоров мыши, в файле `/etc/xdg/kcminputrc`
@@ -67,8 +68,22 @@ cursorTheme[$i]=Breeze_Snow
 cursorTheme=wonderland
 ```
 
+Если в файле `/etc/xdg/kcminputrc` параметры не заблокированы
 
+символами блокировки строки параметра `[$i]`, то будет использоваться
 
-## Другая настройка
+тема курсоров мыши из темы оформления рабочей среды, заданной в файле
 
-Здесь описать какую-либо другую настройку...
+`/etc/xdg/kdeglobals`, из настроек по умолчанию для этой темы, заданных в файле
+
+/usr/share/plasma/look-and-feel/`«оформление рабочей среды»`/contents/defaults
+
+Параметры из файла `/etc/xdg/kdeglobals` имеют приоритет выше, чем у файла `/etc/xdg/kcminputrc`
+
+Если в файле
+
+/usr/share/plasma/look-and-feel/`«оформление рабочей среды»`/contents/defaults
+
+не задана тема курсоров мыши, как, например, в теме оформления рабочей среды `org.kde.rosalight.desktop`,
+
+то будет использоваться тема курсоров из файла `/etc/xdg/kcminputrc`
