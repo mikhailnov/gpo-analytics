@@ -122,3 +122,51 @@ x-scheme-handler/mailto=thunderbird.desktop;kde5-org.kde.kmail2.desktop;
 [Default Applications]
 x-scheme-handler/mailto=thunderbird.desktop;
 ```
+
+### Веб-браузер
+
+При выборе веб-браузером по умолчанию, веб-браузера yandex-browser,
+
+в конфиги добавляются новые параметры.
+
+В файл `~/.config/filetypesrc` добавляются строки параметров
+
+```ini
+[EmbedSettings]
+embed-x-scheme-handler/http=false
+embed-x-scheme-handler/https=false
+```
+
+В файл `~/.config/mimeapps.list` добавляются строки параметров
+
+```ini
+[Added Associations]
+x-scheme-handler/http=yandex-browser.desktop;
+x-scheme-handler/https=yandex-browser.desktop;
+```
+
+```ini
+[Default Applications]
+x-scheme-handler/http=yandex-browser.desktop;
+x-scheme-handler/https=yandex-browser.desktop;
+```
+
+При выборе веб-браузером по умолчанию, веб-браузера firefox,
+
+в конфиге заменяются параметры веб-браузера на новые значения.
+
+Заменяется приложение по умолчанию, и добавляется приложение для ассоциации файлов.
+
+В файл `~/.config/mimeapps.list` добавляются строки параметров
+
+```ini
+[Added Associations]
+x-scheme-handler/http=firefox.desktop;yandex-browser.desktop;
+x-scheme-handler/https=firefox.desktop;yandex-browser.desktop;
+```
+
+```ini
+[Default Applications]
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+```
