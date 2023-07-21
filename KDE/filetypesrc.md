@@ -13,11 +13,24 @@
 
 ### Текстовый редактор
 
-При выборе текстового редактора по умолчанию, текстовый редактор kate,
+При выборе текстовым редактором по умолчанию, текстового редактора kate,
 
 в конфиги добавляются новые параметры.
 
-В файл `~/.config/mimeapps.list` добавляются строки параметров
+
+В созданный файл `~/.config/filetypesrc` добавляются строки параметров
+
+```ini
+[EmbedSettings]
+embed-application/json=false
+embed-application/x-docbook+xml=false
+embed-application/x-yaml=false
+embed-text/markdown=false
+embed-text/plain=false
+embed-text/x-cmake=false
+```
+
+В созданный файл `~/.config/mimeapps.list` добавляются строки параметров
 
 ```ini
 [Added Associations]
@@ -39,21 +52,13 @@ text/plain=kde5-org.kde.kate.desktop;
 text/x-cmake=kde5-org.kde.kate.desktop;
 ```
 
-В созданный файл `~/.config/filetypesrc` добавляются строки параметров
+При выборе текстовым редактором по умолчанию, текстового редактора kwrite,
 
-```ini
-[EmbedSettings]
-embed-application/json=false
-embed-application/x-docbook+xml=false
-embed-application/x-yaml=false
-embed-text/markdown=false
-embed-text/plain=false
-embed-text/x-cmake=false
-```
+в конфиге заменяются параметры текстового редактора на новые значения.
 
-При выборе текстового редактора по умолчанию, текстовый редактор kwrite,
+Заменяется приложение по умолчанию, и добавляется приложение для ассоциации файлов.
 
-в конфиги добавляются новые параметры.
+В файл `~/.config/mimeapps.list` заменяяются строки параметров, на
 
 ```ini
 [Added Associations]
@@ -75,3 +80,45 @@ text/plain=kde5-org.kde.kwrite.desktop;
 text/x-cmake=kde5-org.kde.kwrite.desktop;
 ```
 
+### Почтовый клиент
+
+При выборе почтовым клиентом по умолчанию, почтового клиента kmail,
+
+в конфиги добавляются новые параметры.
+
+В файл `~/.config/filetypesrc` добавляются строки параметров
+
+```ini
+[EmbedSettings]
+embed-x-scheme-handler/mailto=false
+```
+
+В файл `~/.config/mimeapps.list` добавляются строки параметров
+
+```ini
+[Added Associations]
+x-scheme-handler/mailto=kde5-org.kde.kmail2.desktop;
+```
+
+```ini
+[Default Applications]
+x-scheme-handler/mailto=kde5-org.kde.kmail2.desktop;
+```
+
+При выборе почтовым клиентом по умолчанию, почтового клиента Thunderbird,
+
+в конфиге заменяются параметры почтового клиента на новые значения.
+
+Заменяется приложение по умолчанию, и добавляется приложение для ассоциации файлов.
+
+В файл `~/.config/mimeapps.list` добавляются строки параметров
+
+```ini
+[Added Associations]
+x-scheme-handler/mailto=thunderbird.desktop;kde5-org.kde.kmail2.desktop;
+```
+
+```ini
+[Default Applications]
+x-scheme-handler/mailto=thunderbird.desktop;
+```
