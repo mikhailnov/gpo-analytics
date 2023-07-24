@@ -170,3 +170,23 @@ x-scheme-handler/https=firefox.desktop;yandex-browser.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 ```
+
+### Блокировка параметров
+
+Для запрета пользователю производить изменение приложений по умолчанию, в файле `/etc/xdg/mimeapps.list`
+
+блокируется изменение параметров, символами блокировки строки параметра `[$i]`,
+
+и приложения по умолчанию становятся недоступны для изменения, например,
+
+для почтового клиента kmail:
+
+```ini
+[Added Associations]
+x-scheme-handler/mailto[$i]=kde5-org.kde.kmail2.desktop;
+```
+
+```ini
+[Default Applications]
+x-scheme-handler/mailto[$i]=kde5-org.kde.kmail2.desktop;
+```
