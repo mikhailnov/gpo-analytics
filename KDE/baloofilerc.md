@@ -16,7 +16,7 @@
 
 ```ini
 [Basic Settings]
-Indexing-Enabled=false
+Indexing-Enabled=true
 ```
 
 Допустимые значения параметра:
