@@ -36,7 +36,7 @@ socksProxy=
 
 указывается адрес параметром
 
-* `Proxy Config Script=` — адрес и порт, например, 10.132.8.120
+* `Proxy Config Script=` — адрес, например, 10.132.8.120
 
 * `Proxy Config Script=10.132.8.120`
 
