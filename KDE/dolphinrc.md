@@ -14,7 +14,11 @@
 
 ```ini
 [PreviewSettings]
-Plugins=appimagethumbnail,mltpreview,ffmpegthumbs,opendocumentthumbnail,kraorathumbnail,audiothumbnail,imagethumbnail,exrthumbnail,jpegthumbnail,windowsimagethumbnail,svgthumbnail,windowsexethumbnail,comicbookthumbnail,directorythumbnail,textthumbnail,blenderthumbnail,djvuthumbnail,gsthumbnail,cursorthumbnail,fontthumbnail,rawthumbnail,ebookthumbnail,mobithumbnail
+Plugins=appimagethumbnail,mltpreview,ffmpegthumbs,opendocumentthumbnail,
+kraorathumbnail,audiothumbnail,imagethumbnail,exrthumbnail,jpegthumbnail,
+windowsimagethumbnail,svgthumbnail,windowsexethumbnail,comicbookthumbnail,
+directorythumbnail,textthumbnail,blenderthumbnail,djvuthumbnail,gsthumbnail,
+cursorthumbnail,fontthumbnail,rawthumbnail,ebookthumbnail,mobithumbnail
 ```
 
 Для отключения отображения любых миниатюр, нужно из секции удалить все движки миниатюр,
@@ -25,6 +29,54 @@ Plugins=appimagethumbnail,mltpreview,ffmpegthumbs,opendocumentthumbnail,kraorath
 [PreviewSettings]
 Plugins=
 ```
+
+#### Движки отображения миниатюр
+
+* `appimagethumbnail` — AppImage
+
+* `mltpreview` — MLT Playlist
+
+* `ffmpegthumbs` — Видеофайлы
+
+* `opendocumentthumbnail` — Документы
+
+* `kraorathumbnail` — Документы Krita
+
+* `audiothumbnail` — Звуковые файлы
+
+* `imagethumbnail` — Изображения (GIF, PNG, BMP, ...)
+
+* `exrthumbnail` — Изображения EXR
+
+* `jpegthumbnail` — Изображения JPEG
+
+* `windowsimagethumbnail` — Изображения Microsoft Windows
+
+* `svgthumbnail` — Изображения SVG
+
+* `windowsexethumbnail` — Исполняемые файлы Microsoft Windows
+
+* `comicbookthumbnail` — Комиксы
+
+* `directorythumbnail` — Папки
+
+* `textthumbnail` — Текстовые файлы
+
+* `blenderthumbnail` — Файлы Blender
+
+* `djvuthumbnail` — Файлы DjVu
+
+* `gsthumbnail` — Файлы PostScript, PDF и DVI
+
+* `cursorthumbnail` — Файлы курсоров
+
+* `fontthumbnail` — Файлы шрифтов
+
+* `rawthumbnail` — Цифровые негативы (RAW)
+
+* `ebookthumbnail` — Электронные книги
+
+* `mobithumbnail` — Электронные книги Mobipocket
 
 ### Блокировка параметров
 
