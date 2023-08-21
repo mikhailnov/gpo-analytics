@@ -1,6 +1,6 @@
 # Точки входа в dolphin
 
-Документация по точкам входа в dolphin
+Сведения о точках входа в dolphin
 
 Путь к конфигу: `~/.local/share/user-places.xbel`
 
