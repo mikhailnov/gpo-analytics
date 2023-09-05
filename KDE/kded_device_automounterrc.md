@@ -39,9 +39,10 @@ AutomountOnPlugin=true
 
 ```ini
 [General]
-AutomountEnabled=false
-AutomountOnLogin=false
-AutomountUnknownDevices=false
+AutomountEnabled=true
+AutomountOnLogin=true
+AutomountOnPlugin=true
+AutomountUnknownDevices=true
 ```
 
 Допустимые значения параметра:
